@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480" width="100%" height="100%" style="background:#f8fafc; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <text x="425" y="35" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Arquitectura en 4 Capas · PSP0 Programa 1</text>
+  <text x="425" y="58" text-anchor="middle" font-size="13" fill="#64748b">Separación limpia de responsabilidades y aislamiento del dominio</text>
+
+  <!-- Capa 1: Presentación -->
+  <g transform="translate(100, 80)" filter="url(#shadow2)">
+    <rect width="650" height="70" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <rect width="180" height="70" rx="8" fill="#2563eb"/>
+    <text x="90" y="32" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Presentación</text>
+    <text x="90" y="50" text-anchor="middle" fill="#bfdbfe" font-size="11">ConsolaUI.cs</text>
+    <text x="200" y="33" fill="#1e293b" font-size="12" font-weight="600">Interacción directa con el usuario (consola)</text>
+    <text x="200" y="52" fill="#64748b" font-size="11">Solicita ruta de archivo, muestra resultados formateados (F2) y errores amigables (RF-05, RF-07)</text>
+  </g>
+
+  <!-- Capa 2: Aplicación -->
+  <g transform="translate(100, 170)" filter="url(#shadow2)">
+    <rect width="650" height="70" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <rect width="180" height="70" rx="8" fill="#d97706"/>
+    <text x="90" y="32" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Aplicación</text>
+    <text x="90" y="50" text-anchor="middle" fill="#fde68a" font-size="11">Aplicacion.cs</text>
+    <text x="200" y="33" fill="#1e293b" font-size="12" font-weight="600">Orquestación del flujo de ejecución</text>
+    <text x="200" y="52" fill="#64748b" font-size="11">Coordina: argumentos -&gt; lectura de archivo -&gt; cálculo estadístico -&gt; control de excepciones</text>
+  </g>
+
+  <!-- Capa 3: Infraestructura -->
+  <g transform="translate(100, 260)" filter="url(#shadow2)">
+    <rect width="650" height="70" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/>
+    <rect width="180" height="70" rx="8" fill="#7c3aed"/>
+    <text x="90" y="32" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Infraestructura</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ddd6fe" font-size="11">LectorArchivoNumeros.cs</text>
+    <text x="200" y="33" fill="#1e293b" font-size="12" font-weight="600">Acceso a archivos y normalización numérica</text>
+    <text x="200" y="52" fill="#64748b" font-size="11">Abre el archivo, valida líneas y parsea con CultureInfo.InvariantCulture (RF-01, RNF-02)</text>
+  </g>
+
+  <!-- Capa 4: Dominio -->
+  <g transform="translate(100, 350)" filter="url(#shadow2)">
+    <rect width="650" height="85" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <rect width="180" height="85" rx="8" fill="#059669"/>
+    <text x="90" y="35" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Dominio (Puro)</text>
+    <text x="90" y="55" text-anchor="middle" fill="#a7f3d0" font-size="11">Sin consola ni archivos</text>
+    <text x="200" y="33" fill="#1e293b" font-size="12" font-weight="600">Lógica del negocio y estructuras de datos propias</text>
+    <text x="200" y="52" fill="#64748b" font-size="11">ListaEnlazada, Nodo, CalculadoraEstadistica (fórmulas matemáticas x̄ y σ muestral)</text>
+    <text x="200" y="70" fill="#059669" font-size="11" font-weight="600">Reutilizable en programas 3 y 4 sin modificaciones</text>
+  </g>
+</svg>

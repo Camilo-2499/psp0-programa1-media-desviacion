@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%" style="background:#f8fafc; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <text x="450" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Diagrama de Clases UML · PSP0 Programa 1</text>
+  <text x="450" y="60" text-anchor="middle" font-size="13" fill="#64748b">Cálculo de Media y Desviación Estándar Muestral en C# (.NET 9)</text>
+
+  <!-- Presentación: ConsolaUI -->
+  <g transform="translate(40, 100)" filter="url(#shadow)">
+    <rect width="240" height="190" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#2563eb"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">ConsolaUI</text>
+    <text x="15" y="55" font-size="11" fill="#475569">- _entrada: TextReader</text>
+    <text x="15" y="73" font-size="11" fill="#475569">- _salida: TextWriter</text>
+    <line x1="0" y1="83" x2="240" y2="83" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="103" font-size="11" fill="#334155">+ MostrarEncabezado(): void</text>
+    <text x="15" y="121" font-size="11" fill="#334155">+ PedirRuta(): string</text>
+    <text x="15" y="139" font-size="11" fill="#334155">+ MostrarResultado(r, res): void</text>
+    <text x="15" y="157" font-size="11" fill="#334155">+ MostrarError(msg): void</text>
+    <text x="15" y="175" font-size="11" fill="#334155">- Formatear(val): string</text>
+  </g>
+
+  <!-- Aplicación: Aplicacion -->
+  <g transform="translate(330, 100)" filter="url(#shadow)">
+    <rect width="240" height="130" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#d97706"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Aplicacion &lt;&lt;static&gt;&gt;</text>
+    <text x="15" y="55" font-size="11" fill="#475569">+ Exito: int = 0</text>
+    <text x="15" y="73" font-size="11" fill="#475569">+ ErrorDatos: int = 1</text>
+    <line x1="0" y1="83" x2="240" y2="83" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="105" font-size="11" fill="#334155">+ Ejecutar(args, in, out): int</text>
+  </g>
+
+  <!-- Infraestructura: LectorArchivoNumeros -->
+  <g transform="translate(620, 100)" filter="url(#shadow)">
+    <rect width="240" height="150" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#7c3aed"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">LectorArchivoNumeros &lt;&lt;static&gt;&gt;</text>
+    <line x1="0" y1="45" x2="240" y2="45" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="70" font-size="11" fill="#334155">+ Leer(ruta): ListaEnlazada</text>
+    <text x="15" y="90" font-size="11" fill="#334155">+ LeerLineas(lineas): ListaEnlazada</text>
+    <text x="15" y="110" font-size="11" fill="#334155">- Convertir(texto, num): double</text>
+  </g>
+
+  <!-- Dominio: CalculadoraEstadistica -->
+  <g transform="translate(330, 320)" filter="url(#shadow)">
+    <rect width="240" height="170" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#059669"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">CalculadoraEstadistica &lt;&lt;static&gt;&gt;</text>
+    <text x="15" y="55" font-size="11" fill="#475569">+ MinimoParaDesviacion: int = 2</text>
+    <line x1="0" y1="65" x2="240" y2="65" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="87" font-size="11" fill="#334155">+ Media(datos): double</text>
+    <text x="15" y="107" font-size="11" fill="#334155">+ DesviacionEstandar(datos): double</text>
+    <text x="15" y="127" font-size="11" fill="#334155">+ Calcular(datos): ResultadoEstadistico</text>
+  </g>
+
+  <!-- Dominio: ListaEnlazada -->
+  <g transform="translate(40, 350)" filter="url(#shadow)">
+    <rect width="240" height="200" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#059669"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">ListaEnlazada &lt;&lt;IEnumerable&gt;&gt;</text>
+    <text x="15" y="55" font-size="11" fill="#475569">- _primero: Nodo?</text>
+    <text x="15" y="73" font-size="11" fill="#475569">- _ultimo: Nodo?</text>
+    <text x="15" y="91" font-size="11" fill="#475569">+ Cantidad: int { get; }</text>
+    <text x="15" y="109" font-size="11" fill="#475569">+ EstaVacia: bool { get; }</text>
+    <line x1="0" y1="119" x2="240" y2="119" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="141" font-size="11" fill="#334155">+ Agregar(valor: double): void</text>
+    <text x="15" y="161" font-size="11" fill="#334155">+ GetEnumerator(): IEnumerator&lt;double&gt;</text>
+  </g>
+
+  <!-- Dominio: Nodo -->
+  <g transform="translate(60, 565)" filter="url(#shadow)">
+    <rect width="200" height="45" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="100" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#059669">Nodo: Valor, Siguiente</text>
+    <text x="100" y="36" text-anchor="middle" font-size="10" fill="#64748b">(composición dentro de ListaEnlazada)</text>
+  </g>
+
+  <!-- Dominio: ResultadoEstadistico -->
+  <g transform="translate(620, 320)" filter="url(#shadow)">
+    <rect width="240" height="120" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <rect width="240" height="35" rx="8" fill="#059669"/>
+    <text x="120" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">ResultadoEstadistico &lt;&lt;record&gt;&gt;</text>
+    <text x="15" y="55" font-size="11" fill="#475569">+ Cantidad: int</text>
+    <text x="15" y="75" font-size="11" fill="#475569">+ Media: double</text>
+    <text x="15" y="95" font-size="11" fill="#475569">+ DesviacionEstandar: double?</text>
+  </g>
+
+  <!-- Conectores y flechas -->
+  <path d="M 330 160 L 280 160" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <path d="M 570 160 L 620 160" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 450 230 L 450 320" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 570 405 L 620 405" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 330 405 L 280 405" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 160 550 L 160 565" stroke="#059669" stroke-width="2"/>
+</svg>
